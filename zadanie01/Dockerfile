@@ -21,4 +21,4 @@ WORKDIR /home/student/projobj
 
 COPY src /home/student/projobj
 
-CMD /home/student/projobj/skrypt.sh
+CMD ["/home/student/projobj/skrypt.sh"]

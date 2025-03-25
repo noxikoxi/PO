@@ -1,4 +1,4 @@
 #!/bin/bash
-fpc zadanie1.pas -ooutput
-./output
+fpc zadanie1.pas
+./zadanie1
 
