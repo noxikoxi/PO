@@ -31,7 +31,7 @@ Demo -> https://github.com/noxikoxi/PO/blob/main/demos/zadanie01-Pascal.zip
 
 :white_check_mark: 5.0 Stworzenie panelu administracyjnego z mockowanym logowaniem.
 
-Commit -> https://github.com/noxikoxi/PO/commit/cb89a80fad7f20a37c21c01bad3d328322729b4d
+Commit -> https://github.com/noxikoxi/PO/commit/b12a6b88a25e8dc19fb71707a6802e4e6a638370
 
 Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie02
 
