@@ -1,10 +1,12 @@
 Program zadanie1;
 
-procedure generator(lower: integer; upper: integer; var arr: array of integer);
+uses math;
+
+procedure generator(lower: integer; upper: integer; var arr: array of integer; n: integer);
 var i: integer;
 begin
     Randomize;
-    for i := 0 to Length(arr)-1 do
+    for i := 0 to min(Length(arr), n)-1 do
     begin
         arr[i] := random(upper + 1 - lower) + lower;
     end;
@@ -103,7 +105,7 @@ var
     passed: boolean;
 begin
     passed := true;
-    generator(0, 10, arr);
+    generator(0, 10, arr, 100);
     for i := 0 to Length(arr)-1 do
     begin
         if (arr[i] < 0) or (arr[i] > 10) then
@@ -120,22 +122,24 @@ var
     arr: array[0..100] of integer;
     i: integer;
     passed: boolean;
+    zero_count: integer;
 begin
     passed := true;
+    zero_count := 0;
     for i := 0 to Length(arr) do
     begin
         arr[i] := 0;
     end;
 
-    generator(10, 100, arr);
+    generator(10, 100, arr, 50);
     for i := 0 to Length(arr)-1 do
     begin
         if arr[i] = 0 then
-        begin
-            passed := False;
-            break;
-        end;
+            zero_count += 1;
     end;
+
+    if zero_count <> (Length(arr) - 50) then
+        passed := false;
 
     showTestResults(passed, 'TestGeneratorSize');
 end;
@@ -155,7 +159,7 @@ begin
     TestGeneratorRange();
     TestGeneratorSize();
 
-    generator(-10, 10, numbers);
+    generator(-10, 10, numbers, size);
     
     writeln('Tablica przed sortowaniem:');
 
