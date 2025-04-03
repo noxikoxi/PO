@@ -31,7 +31,7 @@ class AuthController @Autowired  constructor(
             "success" to isAuthenticated,
             "message" to if (isAuthenticated) "Login successful" else "Invalid credentials"
         )
-        return ResponseEntity.ok(response)
+        return if (isAuthenticated) ResponseEntity.ok(response) else ResponseEntity.status(401).body(response)
     }
 
     @PostMapping("/lazy/login")
@@ -41,6 +41,6 @@ class AuthController @Autowired  constructor(
             "success" to isAuthenticated,
             "message" to if (isAuthenticated) "Login successful" else "Invalid credentials"
         )
-        return ResponseEntity.ok(response)
+        return if (isAuthenticated) ResponseEntity.ok(response) else ResponseEntity.status(401).body(response)
     }
 }
