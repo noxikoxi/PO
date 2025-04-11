@@ -47,7 +47,7 @@ Demo -> https://github.com/noxikoxi/PO/blob/main/demos/zadanie02-php.zip
 
 :white_check_mark: 4.5 Należy wstrzyknąć singleton do głównej klasy via @Autowired.
 
-:white_check_mark: 5.0 Należy wstrzyknąć singleton do głównej klasy via @Autowired
+:white_check_mark: 5.0 Obok wersji Eager do wyboru powinna być wersja Singletona w wersji lazy
 
 Commit -> https://github.com/noxikoxi/PO/commit/5985b8f423a304dd958580b09bfda147584bda19
 
@@ -55,3 +55,21 @@ Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie03
 
 Demo -> https://github.com/noxikoxi/PO/blob/main/demos/zadanie03-kotlin-spring.zip
 
+### Zadanie 04 Proxy, Go + Echo + gorm
+
+:white_check_mark: 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie
+miała kontroler Pogody, która pozwala na pobieranie danych o pogodzie (lub akcjach giełdowych)
+
+:white_check_mark: 3.5 Należy stworzyć model Pogoda (lub Giełda) wykorzystując gorm, a dane załadować z listy przy uruchomieniu
+
+:white_check_mark: 4.0 Należy stworzyć klasę proxy, która pobierze dane z serwisu zewnętrznego podczas zapytania do naszego kontrolera
+
+:white_check_mark: 4.5 Należy zapisać pobrane dane z zewnątrz do bazy danych
+
+:white_check_mark: 5.0 Należy rozszerzyć endpoint na więcej niż jedną lokalizację (Pogoda), lub akcje (Giełda) zwracając JSONa
+
+Commit -> https://github.com/noxikoxi/PO/commit/6ada8f2570a250bb83efe256aa58477f1db1a6ec
+
+Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie04
+
+Demo -> https://github.com/noxikoxi/PO/blob/main/demos/zadanie04-GO.zip

@@ -73,20 +73,20 @@ func (w *WeatherController) GetWeatherForecast(c echo.Context) error {
 		return c.String(http.StatusNotFound, "City not found")
 	}
 	if !cityInDb {
-		saveForecast(weatherData, w.DB)
+		saveForecast(city, weatherData, w.DB)
 	} else {
-		err = updateCachedForecast(weatherData, w.DB)
+		err = updateCachedForecast(city, weatherData, w.DB)
 		if err != nil {
 			log.Fatal("Failed to update cached forecast.")
 		}
 	}
 	log.Println("Returning fresh data from API")
-	return c.JSON(http.StatusOK, convertResponseToModel(weatherData))
+	return c.JSON(http.StatusOK, convertResponseToModel(city, weatherData))
 }
 
-func convertResponseToModel(weatherData WeatherResponse) models.Weather {
+func convertResponseToModel(city string, weatherData WeatherResponse) models.Weather {
 	var weatherRecord models.Weather
-	weatherRecord.Name = weatherData.Name
+	weatherRecord.Name = city
 	weatherRecord.Sunrise = convertUnixToDate(weatherData.Sys.Sunrise)
 	weatherRecord.Sunset = convertUnixToDate(weatherData.Sys.Sunset)
 	weatherRecord.Weather = weatherData.Weather[0].Main
@@ -102,9 +102,9 @@ func convertResponseToModel(weatherData WeatherResponse) models.Weather {
 	return weatherRecord
 }
 
-func updateCachedForecast(weatherData WeatherResponse, db *gorm.DB) error {
+func updateCachedForecast(city string, weatherData WeatherResponse, db *gorm.DB) error {
 	var weatherRecord models.Weather
-	if err := db.Where("name = ?", weatherData.Name).First(&weatherRecord).Error; err != nil {
+	if err := db.Where("name = ?", city).First(&weatherRecord).Error; err != nil {
 		log.Fatal("Error checking weather in database:", err)
 		return err
 	}
@@ -145,8 +145,8 @@ func convertUnixToDate(unixTimestamp int64) time.Time {
 	return time.Unix(unixTimestamp, 0)
 }
 
-func saveForecast(weatherData WeatherResponse, db *gorm.DB) {
-	weatherRecord := convertResponseToModel(weatherData)
+func saveForecast(city string, weatherData WeatherResponse, db *gorm.DB) {
+	weatherRecord := convertResponseToModel(city, weatherData)
 	// Zapisz dane do bazy
 	if err := db.Create(&weatherRecord).Error; err != nil {
 		log.Fatal("Failed to insert data:", err)
