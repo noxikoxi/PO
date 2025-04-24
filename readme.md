@@ -1,4 +1,4 @@
-# Projektowanie Obiektowe 
+# Projektowanie Obiektowe
 
 ### Zadanie 01 Pascal
 
@@ -17,7 +17,6 @@ Commit -> https://github.com/noxikoxi/PO/commit/5251c8233a645d1366dba4f136a82cc9
 Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie01
 
 Demo -> https://github.com/noxikoxi/PO/blob/main/demos/zadanie01-Pascal.zip
-
 
 ### Zadanie 02 PHP + Symfony
 
@@ -73,3 +72,21 @@ Commit -> https://github.com/noxikoxi/PO/commit/6ada8f2570a250bb83efe256aa58477f
 Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie04
 
 Demo -> https://github.com/noxikoxi/PO/blob/main/demos/zadanie04-GO.zip
+
+### Zadanie 05 Wzorce behawioralne, React
+
+:white_check_mark: 3.0 W ramach projektu należy stworzyć dwa komponenty: Produkty oraz Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej.
+
+:white_check_mark: 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing.
+
+:white_check_mark: 4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hook.
+
+:white_check_mark: 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose.
+
+:white_check_mark: 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS.
+
+Link do commita -> https://github.com/noxikoxi/ebiznes/commit/94dda5219c9774e65ae9f7ca29085efbdc991d5f
+
+Kod -> https://github.com/noxikoxi/ebiznes/tree/main/zadanie05
+
+Demo -> https://github.com/noxikoxi/ebiznes/blob/main/demos/zadanie05-frontend.zip
