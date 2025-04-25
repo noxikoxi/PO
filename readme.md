@@ -90,3 +90,22 @@ Link do commita -> https://github.com/noxikoxi/ebiznes/commit/94dda5219c9774e65a
 Kod -> https://github.com/noxikoxi/ebiznes/tree/main/zadanie05
 
 Demo -> https://github.com/noxikoxi/ebiznes/blob/main/demos/zadanie05-frontend.zip
+
+### Zadanie 06 Zapaszki
+
+:white_check_mark: 3.0 Należy dodać eslint w hookach gita
+
+:white_check_mark: 3.5 Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod aplikacji klienckiej)
+
+:white_check_mark: 4.0 Należy wyeliminować wszystkie zapaszki w kodzie w Sonarze (kod aplikacji klienckiej)
+
+:white_check_mark: 4.5 Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa w kodzie w Sonarze (kod aplikacji klienckiej)
+
+:white_check_mark: 5.0 Zredukować duplikaty kodu do 0%
+
+Link do repozytorium analizowanego przez Sonar -> https://github.com/noxikoxi/products
+
+Link do commita -> https://github.com/noxikoxi/products/commit/31f2e0867d63cc4ea0e2d1f2a97596af14ae4933
+
+Kod hooka, zrzuty ekrany pokazujące jego działanie i badge w readme -> https://github.com/noxikoxi/PO/tree/main/zadanie06
+
