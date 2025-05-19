@@ -110,3 +110,20 @@ Link do commita -> https://github.com/noxikoxi/products/commit/31f2e0867d63cc4ea
 Kod hooka, zrzuty ekrany pokazujące jego działanie i badge w readme -> https://github.com/noxikoxi/PO/tree/main/zadanie06
 
 ### Zadanie 07 Swift + Vapor
+
+
+:white_check_mark: 3.0 Należy stworzyć kontroler wraz z modele Produktów zgodny z CRUD w ORM Fluent
+
+:white_check_mark: 3.5 Należy stworzyć szablony w Leaf
+
+:white_check_mark: 4.0 Należy stworzyć drugi model oraz kontroler Kategorii wraz z relacją
+
+:white_check_mark: 4.5 Należy wykorzystać Redis do przechowywania danych
+
+:x: 5.0 Wrzucić aplikację na heroku
+
+Link do commita -> https://github.com/noxikoxi/PO/commit/c2a5cb4f7ce76e31d9de66de1cfa9730326d6c6b
+
+Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie07
+
+Demo -> https://github.com/noxikoxi/PO/blob/main/demos/zadanie07-swift.zip

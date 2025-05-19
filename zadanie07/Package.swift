@@ -33,14 +33,6 @@ let package = Package(
             ],
             swiftSettings: swiftSettings
         ),
-        .testTarget(
-            name: "zadanie07Tests",
-            dependencies: [
-                .target(name: "zadanie07"),
-                .product(name: "VaporTesting", package: "vapor"),
-            ],
-            swiftSettings: swiftSettings
-        )
     ]
 )
 
