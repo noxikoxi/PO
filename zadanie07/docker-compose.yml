@@ -1,0 +1,26 @@
+#   Build images: docker compose build
+#      Start app: docker compose up app
+#       Stop all: docker compose down
+#
+  
+services:
+  app:
+    image: swift_app:latest
+    build:
+      context: .
+    ports:
+      - '8080:8080'
+    networks:
+      - mynet
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge
+
