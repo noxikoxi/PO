@@ -21,7 +21,7 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "zadanie07",
+            name: "Run",
             dependencies: [
                 .product(name: "Fluent", package: "fluent"),
                 .product(name: "FluentSQLiteDriver", package: "fluent-sqlite-driver"),
@@ -37,5 +37,4 @@ let package = Package(
 )
 
 var swiftSettings: [SwiftSetting] { [
-    .enableUpcomingFeature("ExistentialAny"),
 ] }

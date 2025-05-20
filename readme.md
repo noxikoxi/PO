@@ -120,10 +120,12 @@ Kod hooka, zrzuty ekrany pokazujące jego działanie i badge w readme -> https:/
 
 :white_check_mark: 4.5 Należy wykorzystać Redis do przechowywania danych
 
-:x: 5.0 Wrzucić aplikację na heroku
+:white_check_mark: 5.0 Wrzucić aplikację na heroku
 
 Link do commita -> https://github.com/noxikoxi/PO/commit/c2a5cb4f7ce76e31d9de66de1cfa9730326d6c6b
 
 Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie07
 
 Demo -> https://github.com/noxikoxi/PO/blob/main/demos/zadanie07-swift.zip
+
+Link do Heroku -> https://swift-app-7fe024d350d5.herokuapp.com
