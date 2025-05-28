@@ -30,4 +30,4 @@ Link do testów na browserstack:
 ![Testy Funkcjonalne BrowserStack](browserstack_tests.png)
 
 Końcowy commit zadania:
-- https://github.com/noxikoxi/PO/commit/
+- https://github.com/noxikoxi/PO/commit/cca9e046765d084dc799ef18befa2f5818c38072

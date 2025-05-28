@@ -142,6 +142,6 @@ Link do Heroku -> https://swift-app-7fe024d350d5.herokuapp.com
 
 :white_check_mark: 5.0 Należy uruchomić testy funkcjonalne na Browserstacku na urządzeniu mobilnym
 
-Link do commita -> https://github.com/noxikoxi/PO/commit/
+Link do commita -> https://github.com/noxikoxi/PO/commit/cca9e046765d084dc799ef18befa2f5818c38072
 
 Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie08
