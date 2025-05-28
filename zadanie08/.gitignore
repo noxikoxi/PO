@@ -1,0 +1,6 @@
+browserstack.yml
+*.log
+*.json
+.env
+.browserstack
+__pycache__/

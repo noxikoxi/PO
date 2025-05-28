@@ -129,3 +129,19 @@ Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie07
 Demo -> https://github.com/noxikoxi/PO/blob/main/demos/zadanie07-swift.zip
 
 Link do Heroku -> https://swift-app-7fe024d350d5.herokuapp.com
+
+### Zadanie 08 Testy
+
+:white_check_mark: 3.0 Należy stworzyć 30 przypadków testowych w Pythonie w WebDriverze
+
+:white_check_mark: 3.5 Należy rozszerzyć testy funkcjonalne, aby zawierały minimum 100 asercji
+
+:white_check_mark: 4.0 Należy stworzyć testy jednostkowe do wybranego wcześniejszego projektu z minimum 100 asercjami
+
+:white_check_mark: 4.5 Należy dodać testy API, należy pokryć wszystkie endpointy z minimum jednym scenariuszem negatywnym per endpoint
+
+:white_check_mark: 5.0 Należy uruchomić testy funkcjonalne na Browserstacku na urządzeniu mobilnym
+
+Link do commita -> https://github.com/noxikoxi/PO/commit/
+
+Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie08
