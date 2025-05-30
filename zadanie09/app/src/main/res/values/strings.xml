@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyProductsApp</string>
+    <string name="title_categories">Categories</string>
+    <string name="title_products">Products</string>
+    <string name="title_cart">Cart</string>
+    <string name="titles_products">Products</string>
+    <string name="category_title">Nazwa Kategorii</string>
+    <string name="product_name">Nazwa Produktu</string>
+    <string name="product_description">Krótki opis produktu...</string>
+    <string name="product_price">123.45 zł</string>
+    <string name="add_to_cart">Dodaj</string>
+</resources>
