@@ -1,13 +1,14 @@
 package com.example.myproductsapp
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.myproductsapp.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,26 +27,20 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_categories, R.id.navigation_products , R.id.navigation_cart
+                R.id.navigation_products,R.id.navigation_categories , R.id.navigation_cart
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+
+
         navView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_products -> {
-                    navController.popBackStack(R.id.navigation_products, false)
-                    navController.navigate(R.id.navigation_products)
-                    true
-                }
-                R.id.navigation_categories -> {
-                    navController.navigate(R.id.navigation_categories)
-                    true
-                }
-                R.id.navigation_cart -> {
-                    navController.navigate(R.id.navigation_cart)
-                    true
-                }
-                else -> false
+            if (item.itemId == R.id.navigation_products) {
+                navController.popBackStack(R.id.navigation_products, false)
+                navController.navigate(R.id.navigation_products, null)
+                true
+            } else {
+                item.onNavDestinationSelected(navController)
             }
         }
 

@@ -7,12 +7,18 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myproductsapp.MyApplication
 import com.example.myproductsapp.R
 import com.example.myproductsapp.databinding.FragmentCategoryListBinding
+import com.example.myproductsapp.repository.ProductRepository
 import com.example.myproductsapp.ui.products.ProductListFragment
+import com.example.myproductsapp.ui.products.ProductListViewModel
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 class CategoryListFragment : Fragment() {
 
@@ -21,7 +27,13 @@ class CategoryListFragment : Fragment() {
     private val binding get() = _binding!!
 
     // ViewModel
-    private val viewModel: CategoryListViewModel by viewModels()
+    private lateinit var viewModel: CategoryListViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val productRepository = ProductRepository(MyApplication.realm)
+        viewModel = CategoryListViewModel(productRepository)
+    }
 
     // Metoda odpowiedzialna za "napompowanie" (inflating) layoutu XML fragmentu
     override fun onCreateView(
@@ -48,14 +60,16 @@ class CategoryListFragment : Fragment() {
         // Tworzymy instancję Adaptera
         val categoryAdapter = CategoryAdapter { category ->
             val bundle = Bundle()
-            bundle.putString("categoryId", category.id)
+            bundle.putString("categoryId", category._id.toHexString())
             findNavController().navigate(R.id.action_navigation_categories_to_navigation_products, bundle)
         }
         categoriesRecyclerView.adapter = categoryAdapter // Przypinamy adapter do RecyclerView
 
-        // Pobieramy dane i przekazujemy je do Adaptera
-        val categories = viewModel.getCategories()
-        categoryAdapter.submitList(categories)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.categories.collectLatest { categories ->
+                categoryAdapter.submitList(categories)
+            }
+        }
     }
 
     override fun onDestroyView() {

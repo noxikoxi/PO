@@ -1,7 +1,11 @@
 package com.example.myproductsapp.models
 
-data class Category(
-    val id: String,
-    val name: String,
-    val imageUrl: String? = null // Opcjonalny URL obrazka
-)
+import io.realm.kotlin.types.RealmObject
+import io.realm.kotlin.types.annotations.PrimaryKey
+import org.mongodb.kbson.ObjectId
+
+class Category : RealmObject {
+    @PrimaryKey
+    var _id: ObjectId = ObjectId()
+    var name: String = ""
+}
