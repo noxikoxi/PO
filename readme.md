@@ -145,3 +145,22 @@ Link do Heroku -> https://swift-app-7fe024d350d5.herokuapp.com
 Link do commita -> https://github.com/noxikoxi/PO/commit/cca9e046765d084dc799ef18befa2f5818c38072
 
 Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie08
+
+
+### Zadanie 09 Kotlin, Android 
+
+:white_check_mark: 3.0 stworzyć listę kategorii oraz produktów
+
+:white_check_mark: 3.5 dodać widok koszyka
+
+:white_check_mark: 4.0 stworzyć bazę w Realmie
+
+:x: 4.5 dodać płatności w Stripe
+
+:x: 5.0 dodać logowanie i rejestrację via Oauth2
+
+Link do commita -> https://github.com/noxikoxi/PO/commit/9ceae1e586045fa56d162c14a5983d660f8b7e1a
+
+Kod -> https://github.com/noxikoxi/PO/tree/main/zadanie09
+
+Demo -> https://github.com/noxikoxi/PO/blob/main/demos/zadanie09-kotlin.zip
