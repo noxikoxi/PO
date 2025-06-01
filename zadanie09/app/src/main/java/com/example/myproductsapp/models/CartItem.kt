@@ -4,12 +4,16 @@ import io.realm.kotlin.types.RealmObject
 import io.realm.kotlin.types.annotations.PrimaryKey
 import org.mongodb.kbson.ObjectId
 
-class Product: RealmObject {
+class CartItem : RealmObject{
     @PrimaryKey
     var _id: ObjectId = ObjectId()
-    var name: String = ""
-    var description: String = ""
-    var price: Double = 0.0
-    var category: Category? = null
+    var product: Product? = null
+    var quantity: Int = 0
 }
 
+data class CartItemUI(
+    val id: ObjectId,
+    val productName: String,
+    val productPrice: Double,
+    val quantity: Int
+)

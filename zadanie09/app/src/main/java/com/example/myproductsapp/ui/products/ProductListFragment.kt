@@ -10,11 +10,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mycategoriesapp.ui.products.ProductAdapter
 import com.example.myproductsapp.MyApplication
 import com.example.myproductsapp.databinding.FragmentProductListBinding
+import com.example.myproductsapp.repository.CartRepository
 import com.example.myproductsapp.repository.ProductRepository
-import io.realm.kotlin.Realm
+import com.example.myproductsapp.ui.cart.CartViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -24,11 +24,15 @@ class ProductListFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: ProductListViewModel
+    private lateinit var cartViewModel: CartViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val productRepository = ProductRepository(MyApplication.realm)
         var categoryIdFromArgs: String? = null
+        val cartRepository = CartRepository(MyApplication.realm)
+
+        cartViewModel = CartViewModel(cartRepository)
 
         arguments?.let {
             categoryIdFromArgs = it.getString("categoryId")
@@ -59,10 +63,8 @@ class ProductListFragment : Fragment() {
         productsRecyclerView.addItemDecoration(dividerItemDecoration)
 
         val productAdapter = ProductAdapter(
-            onProductClick = { product ->
-                Toast.makeText(context, "Wybrano produkt: ${product.name}", Toast.LENGTH_SHORT).show()
-            },
             onAddToCartClick = { product ->
+                cartViewModel.addProductToCart(product, 1)
                 Toast.makeText(context, "Dodano do koszyka: ${product.name}", Toast.LENGTH_SHORT).show()
             }
         )

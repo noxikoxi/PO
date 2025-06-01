@@ -1,6 +1,8 @@
 package com.example.myproductsapp
 
 import android.app.Application
+import com.example.myproductsapp.models.Cart
+import com.example.myproductsapp.models.CartItem
 import com.example.myproductsapp.models.Category
 import com.example.myproductsapp.models.Product
 import com.example.myproductsapp.models.RealmDataInitializer
@@ -31,13 +33,12 @@ class MyApplication : Application() {
     private fun initRealm() {
         val config = RealmConfiguration.Builder(schema = setOf(
             Product::class,
-            Category::class
+            Category::class,
+            CartItem::class,
+            Cart::class
         ))
-            .schemaVersion(1) // Zwiększaj tę wersję, gdy zmieniasz schemat (np. dodajesz nowe pole)
-            // .deleteRealmIfMigrationNeeded() // TYLKO DO TESTÓW I DEVELOPMENTU!
-            // W PRODUCJI UŻYJ MIGRACJI, ABY NIE TRACIĆ DANYCH.
+            .schemaVersion(2)
             .build()
-
         realm = Realm.open(config)
     }
 }

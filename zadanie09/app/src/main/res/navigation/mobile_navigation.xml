@@ -25,5 +25,5 @@
         android:id="@+id/navigation_cart"
         android:name="com.example.myproductsapp.ui.cart.CartFragment"
         android:label="@string/title_cart"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_cart"/>
 </navigation>

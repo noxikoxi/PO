@@ -34,7 +34,6 @@ object RealmDataInitializer {
                         Log.d("RealmInitializer", "Dodano kategorię: ${cat.name}")
                     }
 
-                    // 2. Następnie dodaj produkty, łącząc je z kategoriami
                     val productsData = listOf(
                         Product().apply { name = "Smartfon XYZ"; description = "Najnowszy smartfon z potężnym procesorem."; price = 1299.99; category = findLatest(categoryMap["Elektronika"]!!) },
                         Product().apply { name = "Laptop Gamingowy"; description = "Laptop dla graczy z kartą RTX."; price = 4500.00; category = findLatest(categoryMap["Elektronika"]!!) },
